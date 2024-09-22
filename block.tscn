@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://chrg5gy0ye3mi"]
+
+[ext_resource type="Texture2D" uid="uid://cqp6c8766oqmm" path="res://assets/tilemap.png" id="1_0b3cb"]
+[ext_resource type="Script" path="res://block.gd" id="1_yx1ij"]
+[ext_resource type="Script" path="res://addons/jam_launch/core/JamSync.gd" id="2_uxn7a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uk2jh"]
+size = Vector2(128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j88qc"]
+atlas = ExtResource("1_0b3cb")
+region = Rect2(128, 128, 128, 128)
+
+[node name="Block" type="CollisionShape2D"]
+position = Vector2(64, 64)
+shape = SubResource("RectangleShape2D_uk2jh")
+script = ExtResource("1_yx1ij")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_j88qc")
+
+[node name="JamSync" type="Node" parent="."]
+script = ExtResource("2_uxn7a")
+spawn_properties = Array[String](["position"])
+sync_properties = Array[String](["position"])

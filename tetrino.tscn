@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://blr4sw6na6g6y"]
+
+[ext_resource type="Script" path="res://tetrino.gd" id="1_brnf0"]
+[ext_resource type="Script" path="res://addons/jam_launch/core/JamSync.gd" id="2_teoxn"]
+
+[node name="Tetrino" type="CharacterBody2D" groups=["block"]]
+script = ExtResource("1_brnf0")
+metadata/_edit_group_ = true
+
+[node name="JamSync" type="Node" parent="."]
+script = ExtResource("2_teoxn")
+spawn_properties = Array[String](["position", "shape", "grav_index"])
+sync_properties = Array[String](["position"])
